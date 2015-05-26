@@ -42,7 +42,7 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i> Bem vindo, ${usuarioLogado.login}
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a></li>
@@ -105,15 +105,15 @@
 										<p class="help-block">Por favor, preencha os campos corretamente para facilitar a pesquisa.</p>
                                         <div class="form-group">
                                             <label>Nomedo Produto</label>
-                                            <input class="form-control" name="nome_produto" placeholder="Descreva o Nome do Produto">
+                                            <input class="form-control" name="nome_produto" placeholder="Descreva o Nome do Produto" required="required">
                                         </div>
                                         <div>
 	                                        <label>Marca do Produto</label>
-	                                        <input class="form-control" name="marca_produto" placeholder="Descreva a Marca do Produto">
+	                                        <input class="form-control" name="marca_produto" placeholder="Descreva a Marca do Produto" required="required">
                                         </div>
                                         <div class="form-group">
                                             <label>Genêro</label>
-                                            <select class="form-control"name="genero_produto">
+                                            <select class="form-control"name="genero_produto" required="required">
                                                 <option value=""> </option>
                                                 <option value="masculino">Masculino</option>
                                                 <option value="feminino">Feminino</option>

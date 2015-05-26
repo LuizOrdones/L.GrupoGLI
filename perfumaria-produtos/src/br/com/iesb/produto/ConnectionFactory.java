@@ -16,7 +16,7 @@ public class ConnectionFactory {
 		}
 
 		return DriverManager.getConnection("jdbc:mysql://localhost/perfumaria",
-				"root", "root");
+				"root", "iesb");
 	}
 
 }
