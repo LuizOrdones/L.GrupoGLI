@@ -48,7 +48,7 @@
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a></li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Definições</a></li>
                         <li class="divider"></li>
-                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Sair</a></li>
+                        <li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Sair</a></li>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>

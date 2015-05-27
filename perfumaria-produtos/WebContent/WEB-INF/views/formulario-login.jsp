@@ -4,18 +4,22 @@
 <html lang='pt-BR'>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>FlorenceSyten|Login</title>
+<title>Cadastro Produto</title>
 <link rel="stylesheet" type="text/css" href="css/estilos.css" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/metisMenu.min.css" />
 <link rel="stylesheet" type="text/css" href="css/sb-admin-2.css" />
-<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome-min.css" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap-min.js"></script>
+    <script src="js/metisMenu-min.js"></script>
+    <script src="js/sb-admin-2.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,10 +33,10 @@
                         <form action="efetuaLogin" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input type="text" name="login" />
+                                    <input class="form-control" type="text" name="login" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="senha" />
+                                    <input class="form-control" type="password" name="senha" />
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -40,7 +44,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <input type="submit" value="Login"></input>
+                                <input type="submit" value="Login" class="btn btn-lg btn-success btn-block"></input>
                             </fieldset>
                         </form>
                     </div>
@@ -48,7 +52,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="js/jquery.min.js"></script>
     <script src="js/js/bootstrap.min.js"></script>
