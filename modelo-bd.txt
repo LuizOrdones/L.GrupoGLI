@@ -1,0 +1,35 @@
+- produtos
+--- id_produto
+--- descricao_produto
+--- estoque_produto
+--- marca_produto
+--- genero_produto
+--- volume_produto
+--- preco_custo_produto
+
+----------------------------
+- pessoa_fisica
+--- nome
+--- data_nascimento
+--- cpf
+--- sexo
+--- telefone1
+--- telefone2
+--- cep
+---- endereco
+
+----------------------------
+- usuario
+--- pessoa_fisica
+--- cargo
+--- nome_usuario
+--- senha
+--- id_usuario
+
+----------------------------
+- vendas
+--- valor_venda
+--- lucro
+--- desconto
+--- data_venda
+--- num_venda
