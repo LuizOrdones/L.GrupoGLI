@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang='pt-BR'>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>FlorensceSysten</title>
@@ -40,7 +40,7 @@
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> <p>Bem vindo, ${usuarioLogado.login}</p>
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> Bem vindo, ${usuarioLogado.login}
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a></li>
