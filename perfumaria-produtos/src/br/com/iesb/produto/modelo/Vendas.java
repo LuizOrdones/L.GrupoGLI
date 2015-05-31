@@ -9,6 +9,7 @@ public class Vendas {
 	private double valor_venda;
 	private double desconto;
 	private double lucro;
+	
 	public int getNum_venda() {
 		return num_venda;
 	}

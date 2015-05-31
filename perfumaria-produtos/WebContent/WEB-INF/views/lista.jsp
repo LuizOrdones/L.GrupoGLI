@@ -105,7 +105,7 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center!important;">ID</th>
+                                            <th style="text-align: center!important;">CÓDIGO</th>
                                             <th style="text-align: center!important;">NOME</th>
                                             <th style="text-align: center!important;">MARCA</th>
                                             <th style="text-align: center!important;">GÊNERO</th>
