@@ -10,7 +10,21 @@ public class Funcionario {
 	private String rg;
 	private double salario;
 	private Date dataAdmicao;
+	private String cargo;
+	private boolean atividadeFuncionario;
 	
+	public boolean isAtividadeFuncionario() {
+		return atividadeFuncionario;
+	}
+	public void setAtividadeFuncionario(boolean atividadeFuncionario) {
+		this.atividadeFuncionario = atividadeFuncionario;
+	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
 	public int getMatricula() {		
 		return matricula;
 	}
