@@ -1,4 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="java.util.Date,java.text.SimpleDateFormat" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,6 +26,7 @@
     <script src="js/sb-admin-2.js"></script>
 </head>
 <body>
+
 <div id="wrapper">
 
         <!-- Navigation -->
@@ -99,21 +103,26 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form:errors path="nome_produto"/>
-									<form:errors path="nome_produto" cssStyle="color:red"/>
+                                    <form:errors path="descricao"/>
+									<form:errors path="descricao" cssStyle="color:red"/>
 									<form action="adicionaProduto" method="post" role="form">
 										<p class="help-block">Por favor, preencha os campos corretamente para facilitar a pesquisa.</p>
                                         <div class="form-group">
+
                                             <label>Nomedo Produto <font color="red">*</font></label>
                                             <input class="form-control" name="nome_produto" placeholder="Descreva o Nome do Produto" required="required">
+
+                                            <label>Nome do Produto</label>
+                                            <input class="form-control" name="descricao" placeholder="Descreva o Nome do Produto" required="required">
+
                                         </div>
                                         <div>
 	                                        <label>Marca do Produto</label>
-	                                        <input class="form-control" name="marca_produto" placeholder="Descreva a Marca do Produto" required="required">
+	                                        <input class="form-control" name="marcaProduto" placeholder="Descreva a Marca do Produto" required="required">
                                         </div>
                                         <div class="form-group">
                                             <label>Genêro</label>
-                                            <select class="form-control"name="genero_produto" required="required">
+                                            <select class="form-control"name="generoProduto" required="required">
                                                 <option value=""> </option>
                                                 <option value="masculino">Masculino</option>
                                                 <option value="feminino">Feminino</option>
@@ -122,32 +131,25 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Valor de Custo:</label>
-                                            <input class="form-control" name="valorDeCusto_produto" placeholder="R$ 00,00">
+                                            <input class="form-control" name="valorDeCustoProduto" placeholder="R$ 00,00">
                                         </div>
                                         <button type="submit" class="btn btn-default" value="Incluir">Incluir</button>
                                         <button type="reset" class="btn btn-default">Resetar</button>
                                     
                                 </div>
-                                <div class="col-lg-6">
-                                    
-                                    	<label>Valor de Venda:</label>
-                                    	<div class="form-group input-group">
-                                            <span class="input-group-addon">R$</span>
-                                            <input type="text" class="form-control" name="valorDeVenda_produto">
-                                            <span class="input-group-addon">.00</span>
-                                        </div>
-                                        <label>Categoria:</label>
-                                        <div class="form-group input-group">
-                                            <input type="text" class="form-control" name="categoria_produto" placeholder="Pesquise a Categoria">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button">
-                                                	<i class="fa fa-search"></i>
-                                                </button>
-                                            </span>
-                                        </div>
                                         <label>Tamanho:</label>
                                         <div class="form-group input-group">
+
                                             <input type="text" class="form-control" name="quantidaDeMililitros_produto" placeholder="Digite a quantidade em ml">
+
+                                            <input type="text" class="form-control" name="qtdMlProduto" placeholder="Digite a quantidade em ml">
+                                        </div>
+                                        <label>Estoque:</label>
+                                        <div class="form-group input-group">
+                                            <input type="text" class="form-control" name="qtdProduto" placeholder="Digite a quantidade no estoque">
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <input Hidden type="text" name="dataInclusaoProduto" value="<fmt:formatDate value="${produto.dataInclusaoProduto.time}" pattern="dd/MM/yyyy HH:mm:ss" />"/>   
                                         </div>
                                     </form>
                                 </div>

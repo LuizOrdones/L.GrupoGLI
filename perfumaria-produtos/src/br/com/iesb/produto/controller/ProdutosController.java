@@ -1,5 +1,7 @@
 package br.com.iesb.produto.controller;
 
+import java.util.Calendar;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -16,10 +18,11 @@ public class ProdutosController {
 	@RequestMapping("adicionaProduto")
 	public String adiciona(@Valid Produto produto, BindingResult result){
 		
-		if(result.hasFieldErrors("nome_produto")) {
+		if(result.hasFieldErrors("descricao")) {
 		    return "formulario";		
 		}
 		
+		produto.setDataInclusaoProduto(Calendar.getInstance());
 		JdbcProdutosDao dao = new JdbcProdutosDao();
 		dao.adiciona(produto);
 		return "adicionado";		

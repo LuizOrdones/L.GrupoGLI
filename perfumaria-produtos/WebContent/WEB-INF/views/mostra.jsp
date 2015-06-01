@@ -103,19 +103,24 @@
 									    	<input type="hidden" name="id" value="${produto.id}" />
 									    	<div class="form-group">
 									    		<label>Nome:</label>
-									    		<input class="form-control" type="text" name="nome_produto" value="" placeholder="${produto.nome_produto}" required="required"> 
+									    		<input class="form-control" type="text" name="descricao" value="" placeholder="${descricao}" required="required"> 
 									    	</div>
 									    	<div class="form-group">
 									    		<label>Marca:</label>
-									    		<input class="form-control" type="text" name="marca_produto" value="" placeholder="${produto.marca_produto}" required="required">
+									    		<input class="form-control" type="text" name="marcaProduto" value="" placeholder="${produto.marcaProduto}" required="required">
 									    	</div>
-									    	<div class="form-group">	
-									    		<label>Genero:</label>
-									    		<input class="form-control" type="text" name="genero_produto" value="" placeholder="${produto.genero_produto}" required="required">
-									    	</div>
+									    	<div class="form-group">
+            									<label>Genêro</label>
+               										<select class="form-control"name="generoProduto" required="required">
+                										<option value=""> </option>
+                										<option value="masculino">Masculino</option>
+                										<option value="feminino">Feminino</option>
+                										<option value="feminino">Unissex</option>
+                									</select>
+           									</div>
 									    	<div class="form-group">	
 									    		<label>Tamanho:</label>
-									    		<input class="form-control" type="text" name="quantidaDeMililitros_produto" value="" placeholder="${produto.quantidaDeMililitros_produto}" required="required">
+									    		<input class="form-control" type="text" name="qtdMlProduto" value="" placeholder="${produto.qtdMlProduto}" required="required">
 									    	</div>
 									    	 <button type="submit" class="btn btn-default" value="Alterar">Alterar</button>
 									  </form>
@@ -142,19 +147,25 @@
     	<input type="hidden" name="id" value="${produto.id}" />
   
     		Nome:<br />
-    		<input type="text" name="nome_produto" value="${produto.nome_produto}">
-      			${produto.nome_produto}
+    		<input type="text" name="descricao" value="${produto.descricao}">
+      			${produto.descricao}
     		</ input><br />  
     		Marca:<br />
-    		<input type="text" name="marca_produto" value="${produto.marca_produto}">
-      			${produto.marca_produto}
+    		<input type="text" name="marcaProduto" value="${produto.marcaProduto}">
+      			${produto.marcaProduto}
    	 		</ input><br />  
-    		Genero:<br />
-    		<input type="text" name="genero_produto" value="${produto.genero_produto}">
-      			${produto.genero_produto}
-    		</ input><br /> 
-    		<input type="text" name="quantidade_produto" value="${produto.quantidade_produto}">
-      			${produto.quantidade_produto}
+    		
+    		<div class="form-group">
+            	<label>Genêro</label>
+               	<select class="form-control"name="generoProduto" required="required">
+                	<option value=""> </option>
+                	<option value="masculino">Masculino</option>
+                	<option value="feminino">Feminino</option>
+                	<option value="feminino">Unissex</option>
+                </select>
+           	</div>
+    		<input type="text" name="qtdMlProduto" value="${produto.qtdMlProduto}">
+      			${produto.qtdMlProduto}
     		</ input><br /> 
     	<input type="submit" value="Alterar"/>
   </form>

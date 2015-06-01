@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.util.Date,java.text.SimpleDateFormat" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,6 +26,7 @@
     <script src="js/sb-admin-2.js"></script>
 </head>
 <body>
+
 <div id="wrapper">
 
         <!-- Navigation -->
@@ -105,25 +108,27 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center!important;">ID</th>
+                                            <th style="text-align: center!important;">CÓDIGO</th>
                                             <th style="text-align: center!important;">NOME</th>
                                             <th style="text-align: center!important;">MARCA</th>
                                             <th style="text-align: center!important;">GÊNERO</th>
                                             <th style="text-alibn: center!important;">TAMANHO</th>
-                                            <th style="text-align: center!important;">EDITAR</th>
-                                            <th style="text-align: center!important;">EXCLUIR</th>
+                                            <th style="text-align: center!important;">DATA</th>
+                                            <th style="text-align: center!important;">EDITAR</th>                                  
                                         </tr>
                                     </thead>
                                     <tbody>
                                      <c:forEach items="${produtos}" var="produto">
                                         <tr class="odd gradeX">
                                             <td>${produto.id}</td>
-									      	<td>${produto.nome_produto}</td>
-									      	<td>${produto.marca_produto}</td>
-									      	<td>${produto.genero_produto}</td>
-									      	<td>${produto.quantidaDeMililitros_produto}</td>
+									      	<td>${produto.descricao}</td>
+									      	<td>${produto.marcaProduto}</td>
+									      	<td>${produto.generoProduto}</td>
+									      	<td>${produto.qtdMlProduto}</td>
+									      	<td><fmt:formatDate value="${produto.dataInclusaoProduto.time}" pattern="dd/MM/yyyy HH:mm:ss" />
+									      	</td>
 									      	<td align="center" class="center"><a class="btn btn-primary" href="mostraProduto?id=${produto.id}"><i class="fa fa-edit"></i> Alterar</a></td>
-     									    <td align="center" class="center"><a class="btn btn-default" href="removeProduto?id=${produto.id}"><i class="fa fa-trash"></i> Remover</a></td>
+     									    <%-- <td align="center" class="center"><a class="btn btn-default" href="removeProduto?id=${produto.id}"><i class="fa fa-trash"></i> Remover</a></td>  --%>
                                         </tr>
                                      </c:forEach> 
                                     </tbody>
@@ -160,23 +165,16 @@
 <c:forEach items="${produtos}" var="produto">
     <tr>
       	<td>${produto.id}</td>
-      	<td>${produto.nome_produto}</td>
-      	<td>${produto.marca_produto}</td>
-      	<td>${produto.genero_produto}</td>
-      	<!--<td>${produto.valorDeCusto_produto}</td>
-      	<td>${produto.valorDeVenda_produto}</td>
-      	<td>${dataDeFabricacao_produto}</td>
-        <td>${validade_produto}</td>     	
-     	<td>${categoria_produto}</td>
-     	<td>${quantidade_produto}</td>
-      	<td>${quantidaDeMililitros_produto}</td>
+      	<td>${produto.descricao}</td>
+      	<td>${produto.marcaProduto}</td>
+      	<td>${produto.generoProduto}</td>
+      	<!--<td>${produto.valorDeCustoProduto}</td>
+     	<td>${qtdProduto}</td>
+      	<td>${qtdProduto}</td>
      <td>
-       <!--<fmt:formatDate 
-          	value="${dataDeFabricacao_produto.time}" 
+     	<fmt:formatDate 
+          	value="${dataInclusaoProduto.time}" 
           	pattern="dd/MM/yyyy"/>
-		<fmt:formatDate 
-          	value="${validade_produto.time}" 
-          	pattern="dd/MM/yyyy"/> 
      </td>
      <td><a href="mostraProduto?id=${produto.id}">Alterar</a></td>
      <td><a href="removeProduto?id=${produto.id}">Remover</a></td>

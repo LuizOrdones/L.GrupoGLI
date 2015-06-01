@@ -1,13 +1,16 @@
 package br.com.iesb.produto.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
 import br.com.iesb.produto.ConnectionFactory;
 import br.com.iesb.produto.modelo.Produto;
 
@@ -23,19 +26,19 @@ public class JdbcProdutosDao {
 	}
 
 	public void adiciona(br.com.iesb.produto.modelo.Produto produto) {
-		String sql = "insert into produtos (nome_produto, marca_produto, genero_produto, valorDeCusto_produto, valorDeVenda_produto, categoria_produto, quantidade_produto, quantidaDeMililitros_produto, incluido) values (?, ?,?,?,?,?,?,?,?)";
+		String sql = "insert into produtos (descricao, marcaProduto, generoProduto, valorDeCustoProduto, qtdProduto, qtdMlProduto, dataInclusaoProduto, atividadeProduto) values (?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
-			stmt.setString(1, produto.getNome_produto());
-			stmt.setString(2, produto.getMarca_produto());
-			stmt.setString(3, produto.getGenero_produto());
-			stmt.setDouble(4, produto.getValorDeCusto_produto());
-			stmt.setDouble(5, produto.getValorDeVenda_produto());
-			stmt.setString(6, produto.getCategoria_produto());
-			stmt.setInt(7, produto.getQuantidade_produto());
-			stmt.setDouble(8, produto.getQuantidaDeMililitros_produto());			
-			stmt.setBoolean(9, produto.isIncluido());
+			stmt.setString(1, produto.getDescricao());
+			stmt.setString(2, produto.getMarcaProduto());
+			stmt.setString(3, produto.getGeneroProduto());
+			stmt.setDouble(4, produto.getValorDeCustoProduto());
+			stmt.setInt(5, produto.getQtdProduto());
+			stmt.setDouble(6, produto.getQtdMlProduto());
+			stmt.setTimestamp(7, new java.sql.Timestamp((produto.getDataInclusaoProduto()!= null ? 
+					produto.getDataInclusaoProduto() : Calendar.getInstance()).getTimeInMillis()));
+			stmt.setBoolean(8, produto.isAtividadeProduto());
 			stmt.execute();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -59,20 +62,19 @@ public class JdbcProdutosDao {
 	}
 
 	public void altera(Produto produto) {
-		String sql = "update produtos set nome_produto = ?, marca_produto = ?, genero_produto = ?, quantidaDeMililitros_produto = ? where id = ?";
+		String sql = "update produtos set descricao = ?, marcaProduto = ?, generoProduto = ?, qtdMlProduto = ? where id = ?";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
-			stmt.setString(1, produto.getNome_produto());
-			stmt.setString(2, produto.getMarca_produto());
-			stmt.setString(3, produto.getGenero_produto());
-			//stmt.setDouble(4, produto.getValorDeCusto_produto());
-		    //stmt.setDouble(5, produto.getValorDeVenda_produto());
-			//stmt.setString(6, produto.getCategoria_produto());
-			//stmt.setInt(4, produto.getQuantidade_produto());
-			stmt.setDouble(4, produto.getQuantidaDeMililitros_produto());
-			/*stmt.setDate(9, produto.getDataInclusao_produto() != null ? new Date(
-					produto.getDataInclusao_produto().getTimeInMillis()) : null);*/
+			stmt.setString(1, produto.getDescricao());
+			stmt.setString(2, produto.getMarcaProduto());
+			stmt.setString(3, produto.getGeneroProduto());
+			/*stmt.setDouble(4, produto.getValorDeCustoProduto());
+			stmt.setInt(5, produto.getQtdProduto());*/
+			stmt.setDouble(4, produto.getQtdMlProduto());
+			/*stmt.setDate(7, produto.getDataInclusaoProduto() != null ? new Date(
+					produto.getDataInclusaoProduto().getTimeInMillis()) : null);
+			stmt.setBoolean(8, produto.isAtividadeProduto());*/
 			stmt.setLong(5, produto.getId());
 			stmt.execute();
 		} catch (SQLException e) {
@@ -132,24 +134,24 @@ public class JdbcProdutosDao {
 		Produto produto = new Produto();
 
 		// popula o objeto produto
-		produto.setId(rs.getLong("id"));
-		produto.setNome_produto(rs.getString("nome_produto"));
-		produto.setMarca_produto(rs.getString("marca_produto"));
-		produto.setGenero_produto(rs.getString("genero_produto"));
-		produto.setValorDeCusto_produto(rs.getDouble("valorDeCusto_produto"));
-		produto.setValorDeVenda_produto(rs.getDouble("ValorDeVenda_produto"));
-		produto.setCategoria_produto(rs.getString("categoria_produto"));
-		produto.setQuantidade_produto(rs.getInt("Quantidade_produto"));
-		produto.setQuantidaDeMililitros_produto(rs.getDouble("quantidadeMililitros_produto"));
-		produto.setFinalizado(rs.getBoolean("incluido"));
-
+		produto.setId(rs.getInt("id"));
+		produto.setDescricao(rs.getString("descricao"));
+		produto.setMarcaProduto(rs.getString("marcaProduto"));
+		produto.setGeneroProduto(rs.getString("generoProduto"));
+		produto.setValorDeCustoProduto(rs.getDouble("valorDeCustoProduto"));
+		produto.setQtdProduto(rs.getInt("qtdProduto"));
+		produto.setQtdMlProduto(rs.getDouble("qtdMlProduto"));
+		produto.setAtividadeProduto(rs.getBoolean("atividadeProduto"));
+		
 		// popula a data de inclusao do produto, fazendo a conversao
-		Date data = rs.getDate("dataInclusao_produto");
+		Timestamp data = rs.getTimestamp("dataInclusaoProduto");
 		if (data != null) {
-			Calendar dataInclusao_produto = Calendar.getInstance();
-			dataInclusao_produto.setTime(data);
-			produto.setDataInclusao_produto(dataInclusao_produto);
-		}
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			Calendar dataInclusaoProduto = Calendar.getInstance();
+			dataInclusaoProduto.setTime(data);
+			System.out.println(">>" + dateFormat.format(data));
+			produto.setDataInclusaoProduto(dataInclusaoProduto);
+		} else produto.setDataInclusaoProduto(null);
 		return produto;
 	}
 }
