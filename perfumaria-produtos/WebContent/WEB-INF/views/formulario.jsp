@@ -136,6 +136,10 @@
                                         <div class="form-group input-group">
                                             <input type="text" class="form-control" name="qtdMlProduto" placeholder="Digite a quantidade em ml">
                                         </div>
+                                        <label>Estoque:</label>
+                                        <div class="form-group input-group">
+                                            <input type="text" class="form-control" name="qtdProduto" placeholder="Digite a quantidade no estoque">
+                                        </div>
                                         <div class="form-group input-group">
                                             <input Hidden type="text" name="dataInclusaoProduto" value="<fmt:formatDate value="${produto.dataInclusaoProduto.time}" pattern="dd/MM/yyyy HH:mm:ss" />"/>   
                                         </div>
