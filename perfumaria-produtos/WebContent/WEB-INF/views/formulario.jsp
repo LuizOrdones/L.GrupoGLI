@@ -104,7 +104,7 @@
 									<form action="adicionaProduto" method="post" role="form">
 										<p class="help-block">Por favor, preencha os campos corretamente para facilitar a pesquisa.</p>
                                         <div class="form-group">
-                                            <label>Nomedo Produto</label>
+                                            <label>Nomedo Produto <font color="red">*</font></label>
                                             <input class="form-control" name="nome_produto" placeholder="Descreva o Nome do Produto" required="required">
                                         </div>
                                         <div>
@@ -147,7 +147,6 @@
                                         </div>
                                         <label>Tamanho:</label>
                                         <div class="form-group input-group">
-                                        	<span class="input-group-addon"><i class="fa fa-eur"></i></span>
                                             <input type="text" class="form-control" name="quantidaDeMililitros_produto" placeholder="Digite a quantidade em ml">
                                         </div>
                                     </form>
