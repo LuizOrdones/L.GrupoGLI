@@ -12,7 +12,48 @@ public class Vendas {
 	private double valorVenda;
 	private double desconto;
 	private double lucro;
+	private int qtdVenda;
+	private int estoqueAtualizado;
+	private boolean atividadeVenda;
+	private Produto produto;
+
+	public Vendas(){
+		this.produto = new Produto();
+	}
+	public void calculaEstoque(){
+		Produto produto = new Produto();
+		estoqueAtualizado = qtdVenda - produto.getQtdProduto();
+		produto.setQtdProduto(estoqueAtualizado) ;
+	}
 	
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public int getEstoqueAtualizado() {
+		return estoqueAtualizado;
+	}
+
+	public void setEstoqueAtualizado(int estoqueAtualizado) {
+		this.estoqueAtualizado = estoqueAtualizado;
+	}
+	
+	public int getEstoqueAtualizadoAsString() {
+		Produto produto = new Produto ();
+		estoqueAtualizado = produto.getQtdProduto() - qtdVenda;
+		return estoqueAtualizado;
+	}
+	
+	public int getQtdVenda() {
+		return qtdVenda;
+	}
+	public void setQtdVenda(int qtdVenda) {
+		this.qtdVenda = qtdVenda;
+	}
 	public int getNumVenda() {
 		return numVenda;
 	}
@@ -43,6 +84,12 @@ public class Vendas {
 	}
 	public void setLucro(double lucro) {
 		this.lucro = lucro;
+	}
+	public boolean isAtividadeVenda() {
+		return atividadeVenda;
+	}
+	public void setAtividadeVenda(boolean atividadeVenda) {
+		this.atividadeVenda = atividadeVenda;
 	}
 
 	

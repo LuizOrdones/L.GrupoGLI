@@ -113,6 +113,7 @@
                                             <th style="text-align: center!important;">MARCA</th>
                                             <th style="text-align: center!important;">GÊNERO</th>
                                             <th style="text-alibn: center!important;">TAMANHO</th>
+                                            <th style="text-align: center!important;">Estoque</th>
                                             <th style="text-align: center!important;">DATA</th>
                                             <th style="text-align: center!important;">EDITAR</th>                                  
                                         </tr>
@@ -120,12 +121,13 @@
                                     <tbody>
                                      <c:forEach items="${produtos}" var="produto">
                                         <tr class="odd gradeX">
-                                            <td>${produto.id}</td>
-									      	<td>${produto.descricao}</td>
-									      	<td>${produto.marcaProduto}</td>
-									      	<td>${produto.generoProduto}</td>
-									      	<td>${produto.qtdMlProduto}</td>
-									      	<td><fmt:formatDate value="${produto.dataInclusaoProduto.time}" pattern="dd/MM/yyyy HH:mm:ss" />
+                                            <td style="text-align: center!important;">${produto.id}</td>
+									      	<td style="text-align: center!important;">${produto.descricao}</td>
+									      	<td style="text-align: center!important;">${produto.marcaProduto}</td>
+									      	<td style="text-align: center!important;">${produto.generoProduto}</td>
+									      	<td style="text-align: center!important;">${produto.qtdMlProduto}</td>
+									      	<td style="text-align: center!important;">${produto.qtdProduto}</td>
+									      	<td style="text-align: center!important;"><fmt:formatDate value="${produto.dataInclusaoProduto.time}" pattern="dd/MM/yyyy HH:mm:ss" />
 									      	</td>
 									      	<td align="center" class="center"><a class="btn btn-primary" href="mostraProduto?id=${produto.id}"><i class="fa fa-edit"></i> Alterar</a></td>
      									    <%-- <td align="center" class="center"><a class="btn btn-default" href="removeProduto?id=${produto.id}"><i class="fa fa-trash"></i> Remover</a></td>  --%>

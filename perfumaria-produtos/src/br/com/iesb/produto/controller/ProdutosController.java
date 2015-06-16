@@ -23,6 +23,7 @@ public class ProdutosController {
 		}
 		
 		produto.setDataInclusaoProduto(Calendar.getInstance());
+		
 		JdbcProdutosDao dao = new JdbcProdutosDao();
 		dao.adiciona(produto);
 		return "adicionado";		

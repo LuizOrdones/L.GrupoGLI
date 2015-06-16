@@ -106,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="adicionaVendas">
                             <div class="panel-footer">
                                 <span class="pull-left">Confira todas as vendas</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

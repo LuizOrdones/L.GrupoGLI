@@ -112,8 +112,8 @@
                                             <input class="form-control" name="descricao" placeholder="Descreva o Nome do Produto" required="required">
                                         </div>
                                         <div>
-	                                        <label>Marca do Produto</label>
-	                                        <input class="form-control" name="marcaProduto" placeholder="Descreva a Marca do Produto" required="required">
+	                                        <label>Valor da Venda</label>
+	                                        <input class="form-control" name="valorVenda" placeholder="Descreva o valor da venda" required="required">
                                         </div>
                                         <div class="form-group">
                                             <label>Genêro</label>

@@ -154,4 +154,17 @@ public class JdbcProdutosDao {
 		} else produto.setDataInclusaoProduto(null);
 		return produto;
 	}
+	
+	public void atualizaEstoque(Produto produto){
+		String sql = "update produtos set qtdProduto = ? where id = ?";
+		PreparedStatement stmt;
+		try {
+			stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, produto.getQtdProduto());
+			stmt.setLong(2, produto.getId());
+			stmt.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
