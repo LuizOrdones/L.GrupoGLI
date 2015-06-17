@@ -1,7 +1,11 @@
 package br.com.iesb.produto.modelo;
 
+import javax.validation.constraints.NotNull;
+
 public class Usuario {
+	@NotNull
 	private String login;
+	@NotNull
 	private String senha;
 
 	public String getLogin() {

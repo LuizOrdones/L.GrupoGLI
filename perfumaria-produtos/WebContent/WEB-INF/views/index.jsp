@@ -146,13 +146,13 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">10</div>
-                                    <div>Cadastro de Funcionários</div>
+                                    <div>Cadastro de Usuários</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="listaUsuarios">
                             <div class="panel-footer">
-                                <span class="pull-left">Acessar cadastro</span>
+                                <span class="pull-left">Acessar Lista de Usuários</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

@@ -1,8 +1,11 @@
 package br.com.iesb.produto.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.iesb.produto.dao.JdbcUsuarioDao;
@@ -29,5 +32,28 @@ public class LoginController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:loginForm";
+	}
+	
+	@RequestMapping("listaUsuarios")
+	public String lista(Model model){
+		JdbcUsuarioDao dao = new JdbcUsuarioDao();
+		model.addAttribute("usuarios", dao.lista());
+		return "listaUsuarios";
+	}
+	
+	@RequestMapping("adicionaUsuario")
+	public String adicionaUsuario(@Valid Usuario usuario, BindingResult result){
+		
+		if(result.hasFieldErrors("login")) {
+		    return "formulario-usuario";		
+		}
+		
+		if(result.hasFieldErrors("senha")) {
+		    return "formulario-usuario";		
+		}
+
+		JdbcUsuarioDao dao = new JdbcUsuarioDao();
+		dao.adicionaUsuario(usuario);
+		return "adicionado";		
 	}
 }
