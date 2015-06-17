@@ -1,0 +1,13 @@
+127.0.0.1 - - [21/May/2015:19:59:03 -0300] "GET / HTTP/1.1" 200 11418
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/listaProdutos HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/loginForm HTTP/1.1" 200 2616
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/css/estilos.css HTTP/1.1" 404 1021
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/css/font-awesome.min.css HTTP/1.1" 404 1039
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/css/metisMenu.min.css HTTP/1.1" 200 781
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/css/sb-admin-2.css HTTP/1.1" 200 6094
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:27 -0300] "GET /perfumaria-produtos/js/js/bootstrap.min.js HTTP/1.1" 404 1035
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:28 -0300] "GET /perfumaria-produtos/js/metisMenu.min.js HTTP/1.1" 404 1029
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:28 -0300] "GET /perfumaria-produtos/js/sb-admin-2.js HTTP/1.1" 200 1181
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:28 -0300] "GET /perfumaria-produtos/js/jquery.min.js HTTP/1.1" 200 84355
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:28 -0300] "GET /perfumaria-produtos/css/bootstrap.min.css HTTP/1.1" 200 117305
+0:0:0:0:0:0:0:1 - - [21/May/2015:19:59:43 -0300] "POST /perfumaria-produtos/efetuaLogin HTTP/1.1" 500 11476
